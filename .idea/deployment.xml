@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="RPi_BreadBoard">
+    <serverData>
+      <paths name="RPi_BreadBoard">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/pi/pywork" local="$PROJECT_DIR$/../raspberryPiProject" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
