@@ -11,14 +11,14 @@ class CowBull(threading.Thread):
         self.root = tk.Tk()
 
         # Variables
-        self.answer = tk.IntVar
+        self.answer = tk.IntVar()
 
 
-        self.scoreLabel = tk.Label(self.root)
-        self.scoreLabel.grid(column=0, row=1, rowspan=10)
+        self.scoreLabel = tk.LabelFrame(self.root)
+        self.scoreLabel.grid(column=0, row=1, rowspan=10, sticky=tk.N + tk.S)
 
-        self.guessLabel = tk.Label(self.root)
-        self.guessLabel.grid(column=1, row=1, rowspan=10)
+        self.guessLabel = tk.LabelFrame(self.root)
+        self.guessLabel.grid(column=1, row=1, rowspan=10, sticky=tk.W + tk.E)
 
         self.entryLabel = tk.Label(self.root)
         self.entryLabel.grid(column=2, row=1, rowspan=10)
@@ -87,12 +87,16 @@ class CowBull(threading.Thread):
                         bull += 1
 
             self.guesses += 1
+            self.roundscore = tk.Label(self.scoreLabel,text= "cow: " + str(cow) + " bull:" + str(bull))
+            self.roundscore.grid(sticky=tk.N)
 
             print "cow: " + str(cow) + " bull:" + str(bull)
 
             if cow == 4:
                 print "WWohoooooooooooooooooo    you win with {:d} guesses".format(self.guesses)
                 game = False
+
+            self.entry.delete(0,"end")
 
 
 
